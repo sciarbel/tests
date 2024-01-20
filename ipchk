@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+date > $1.log
+ping -c 10 120.0.0.1 &>> $1.log
+exec 5<>/dev/tcp/ifconfig.me/80
+echo "GET /ip HTTP/1.1
+Host: ifconfig.me
+" >&5
+cat <&5 >>$1.log
+
+exit 0
