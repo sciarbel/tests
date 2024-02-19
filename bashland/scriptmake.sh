@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-#--------------------------------------------
-# Author     : test 
+###################################################
 # Date       : Wed 31 Feb 2024 23:38:50 IST
-# File       : scriptmake.sh
-#--------------------------------------------
-# Description: A simple shell script that simple shell script that takes a filename as a command line argument ($1). It creates a new file with the provided name, adds a header with some information, and makes the file executable. Additionally, it opens the file in the nano text editor for editing.
-
-# Usage: ./scriptmake.sh <filename>
+# File name  : scriptmake.sh
+# Author     : test 
+# License    : GNU/GPL v3.0
+###################################################
+# A simple that takes a file name as a command line argument ($1).It then creates a new file with the provided name, adds a header with some information,and makes the file executable. Additionally, it opens the file in the text editor.
+# Usage: ./scriptmake.sh <file name>
+###################################################
 
 # Check if the file name is provided as a command line argument
 [[ $# -ne 1 ]] && echo 'Type a valid file name, please' && exit 1
@@ -16,13 +17,14 @@
 
 # Header
 header="#!/usr/bin/env bash
-#--------------------------------------------
-# Date     : $(date)
-# Author   : test
-# File name: $1
-#--------------------------------------------
-# Usage    :
-#
+###################################################
+# Date        : $( date +'%d %b %Y %H:%M:%S %Z' )
+# File name   : $1
+# Author      : test
+# License     : GNU/GPL v3.0
+###################################################
+# Usage       :
+###################################################
 "
 
 echo "$header" >> "$1"
