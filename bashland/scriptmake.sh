@@ -30,6 +30,6 @@ header="#!/usr/bin/env bash
 echo "$header" >> "$1"
 
 chmod +x "$1"
-nano "$1"
+code "$1"
 
 exit 0
